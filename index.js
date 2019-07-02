@@ -39,8 +39,9 @@ const plugin = bundler => {
           const hash = crypto.createHash(hashAlgorithm);
           hash.update(data, "utf8");
 
-          const integrity = `${hashAlgorithm}-${hash.digest("base64")}`;
-          return { ...node, attrs: { ...node.attrs, integrity } };
+          node.attrs.integrity = `${hashAlgorithm}-${hash.digest("base64")}`;
+          if (publicUrl) node.attrs.crossorigin = "anonymous";
+          return node;
         });
       };
 
