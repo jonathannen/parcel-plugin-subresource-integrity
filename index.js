@@ -6,6 +6,8 @@ const posthtml = require("posthtml");
 const hashAlgorithm = "sha384";
 
 const plugin = bundler => {
+  // Only run when building - the integrity flag often breaks on watched files
+  if (!bundler.options.production) return;
   const publicUrl = bundler.options.publicURL;
 
   bundler.on("bundled", bundle => {
