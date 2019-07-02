@@ -1,0 +1,12 @@
+{
+  "name": "parcel-plugin-subresource-integrity",
+  "version": "0.1.0",
+  "author": "Jon Williams <jon@jonathannen.com>",
+  "description": "Generates Subresource Integrity attributes for Parcel outputs",
+  "homepage": "https://github.com/jonathannen/parcel-plugin-subresource-integrity",
+  "license": "MIT",
+  "main": "index.js",
+  "peerDependencies": {
+    "parcel-bundler": "^1.9.4"
+  }
+}
