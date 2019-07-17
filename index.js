@@ -47,7 +47,7 @@ const plugin = bundler => {
         });
       };
 
-      const data = fs.readFileSync(bundle.name, "utf-8");
+      const data = fs.readFileSync(bundle.name, "utf8");
       const result = await posthtml([posthtmler]).process(data);
       fs.writeFileSync(bundle.name, result.html);
     });
