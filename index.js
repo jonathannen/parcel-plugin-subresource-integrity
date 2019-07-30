@@ -29,7 +29,7 @@ const plugin = bundler => {
           src = src.trim();
           if (src.length === 0) return node;
 
-          // Remote publicUrl if it's in use - also detect references to external files
+          // Remove publicUrl (if in use) to find locally - also detect references to external files
           if (publicUrl) {
             if (!src.startsWith(publicUrl)) return node;
             src = src.substring(publicUrl.length);
