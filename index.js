@@ -21,6 +21,7 @@ const plugin = bundler => {
         tree.match([{ tag: "script" }, { tag: "link" }], node => {
           let src = undefined;
           if (node.tag === "script") {
+            if(!node.attrs.src) return node;
             src = node.attrs.src || "";
           } else {
             if (node.attrs.rel !== "stylesheet") return node;
